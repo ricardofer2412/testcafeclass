@@ -4,7 +4,10 @@
   "description": "Test Cafe",
   "main": "index.js",
   "scripts": {
-    "test": "testcafe chrome ./tests"
+    "test:chrome": "testcafe chrome ./tests -s takeOnFails=true",
+    "test:chrome:5": "testcafe -c 5 chrome ./tests -s takeOnFailure=true",
+    "test:chrome:headless:5": "testcafe -c 5 chrome:headless ./tests -s takeOnFailure=true",
+    "test:chrome:headless": "testcafe chrome:headless ./tests -s takeOnFailure=true"
   },
   "keywords": [
     "TestCafe",
@@ -15,5 +18,8 @@
   "license": "ISC",
   "dependencies": {
     "testcafe": "^1.17.1"
+  },
+  "devDependencies": {
+    "xpath-to-css": "^1.0.5"
   }
 }
